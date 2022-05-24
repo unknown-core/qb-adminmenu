@@ -72,7 +72,7 @@ RegisterNetEvent('qb-admin:server:ban', function(player, time, reason)
         local timeTable = os.date('*t', banTime)
         MySQL.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)', {
             GetPlayerName(player.id),
-            QBCore.Functions.GetIdentifier(player.id, QBConfig.Server.Identifier),
+            QBCore.Functions.GetIdentifier(player.id, QBCore.Config.Server.Identifier),
             QBCore.Functions.GetIdentifier(player.id, 'discord'),
             QBCore.Functions.GetIdentifier(player.id, 'ip'),
             reason,
